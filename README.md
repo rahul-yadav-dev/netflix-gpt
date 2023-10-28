@@ -2,6 +2,22 @@
  
 - Created app using create-react-app
 - Configured with tailwind css
+- Header
+- Routing of App
+- Login Form
+- Signup form
+- Form Validation
+- useRef Hook
+- Firebase setup 
+- Deploying our app to production
+- Create Signup User Account
+- Implement Sign in user API
+- Created redux store with user slice
+- Implemented Signout
+- Update Profile
+- Fetch from TMDB Movies
+
+
 
 
 # Features
@@ -11,6 +27,7 @@
 
 - Browse (after authentication)
     - Header
+    - Login form
     - Main movie
      - Trailer in background
      - Title and description
