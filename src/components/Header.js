@@ -52,6 +52,7 @@ const Header = () => {
 
       {user && (
         <div className="flex">
+           <button className="px-4 mr-5 border border-purple-800 bg-purple-500 text-white rounded-lg"> Gpt search </button>
           <img
             className="w-18 rounded-lg mr-4 my-2"
             alt="usericon"

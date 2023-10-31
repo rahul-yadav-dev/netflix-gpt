@@ -39,6 +39,8 @@
 - Made the browse page look good with tailwind css
 - Fetch movies by category
 
+- Gpt search feature
+
 
 # Features
 

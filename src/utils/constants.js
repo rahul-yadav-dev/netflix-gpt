@@ -6,7 +6,7 @@ export const USER_AVATAR =
 
 const url =
   "https://api.themoviedb.org/3/account/20633310/watchlist/movies?language=en-US&page=1&sort_by=created_at.asc";
-export const API_OPTIONS = {
+  export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
