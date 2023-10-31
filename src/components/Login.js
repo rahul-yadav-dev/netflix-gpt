@@ -7,9 +7,9 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -18,14 +18,12 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef(null);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
   };
   const handleButtonClick = () => {
-    // Validate the form data
     const validationResult = checkValidData(
       email.current.value,
       password.current.value
@@ -36,29 +34,21 @@ const Login = () => {
     if (validationResult) return;
 
     if (!isSignInForm) {
-      // signup logic
       createUserWithEmailAndPassword(
         auth,
         email.current.value,
         password.current.value
       )
         .then((userCredential) => {
-          // Signed up
           const user = userCredential.user;
-
-          // Update user name
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:
-              "https://avatars.githubusercontent.com/u/26822095?s=400&u=cc86d4b3522c117043e725b78880b4152eca1a1a&v=4",
+            photoURL: USER_AVATAR,
           })
             .then(() => {
               // fetch from the updated user and dispatch action of addUser with the updated info
               const { uid, email, displayName, photoURL } = auth.currentUser;
               dispatch(addUser({ uid, email, displayName, photoURL }));
-
-              // navigate to browse page after successfully signed in
-              navigate("/browse");
             })
             .catch((error) => {
               setErrorMessage(error.message);
@@ -74,15 +64,10 @@ const Login = () => {
         auth,
         email.current.value,
         password.current.value
-      )
-        .then(() => {
-          // Signed in
-          navigate("/browse");
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          setErrorMessage(errorCode);
-        });
+      ).catch((error) => {
+        const errorCode = error.code;
+        setErrorMessage(errorCode);
+      });
     }
   };
 

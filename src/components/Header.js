@@ -1,13 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { auth } from "../utils/firebase";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { onAuthStateChanged } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { addUser, removeUser } from "../utils/userSlice";
+import { LOGO } from "../utils/constants";
 
 const Header = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
-  console.log(user);
+
+  useEffect(() => {
+    // this is a event listener so doing it in useEffect, since we only want to do it once
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { uid, email, displayName, photoURL } = user;
+        dispatch(addUser({ uid, email, displayName, photoURL }));
+        navigate("/browse");
+      } else {
+        dispatch(removeUser());
+        navigate("/");
+      }
+    });
+
+    return () => {
+      // Unsubscribe when component is unmount
+      unsubscribe();
+    };
+  }, []);
 
   const handleSignout = () => {
     signOut(auth)
@@ -20,17 +43,17 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute h-20 px-8 py-2 bg-gradient-to-b from-black z-10 w-screen flex justify-between">
+    <div className="absolute h-24 px-8 py-2 bg-gradient-to-b from-black z-10 w-screen flex justify-between">
       <img
         className="w-44"
-        src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
+        src={LOGO}
         alt="logo"
       />
 
       {user && (
         <div className="flex">
           <img
-            className="w-16 rounded-lg"
+            className="w-18 rounded-lg mr-4 my-2"
             alt="usericon"
             src={user?.photoURL}
           />
