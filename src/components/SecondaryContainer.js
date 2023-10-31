@@ -1,9 +1,24 @@
-import React from 'react'
+import React from "react";
+import MovieList from "./MovieList";
+import { useSelector } from "react-redux";
+import camelCaseToWords from "../utils/camelCaseToWord";
 
 const SecondaryContainer = () => {
+  const movies = useSelector((store) => store.movies.category);
+  const movieKeys = Object.keys(movies);
   return (
-    <div>SecondaryContainer</div>
-  )
-}
+    <div className="">
+      <div className=" -mt-52 ml-10 relative z-20">
+        {movieKeys.map((movieCategory) => (
+          <MovieList
+            title={camelCaseToWords(movieCategory)}
+            movies={movies[movieCategory]}
+            key={movieCategory}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
-export default SecondaryContainer
+export default SecondaryContainer;

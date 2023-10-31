@@ -7,21 +7,10 @@ import SecondaryContainer from "./SecondaryContainer";
 const Browse = () => {
   useNowPlayingMovies();
   return (
-    <div>
+    <div className="bg-black">
       <Header />
       <MainContainer />
       <SecondaryContainer />
-      {
-        /*
-        Main Container
-         - video background
-         - video title
-        Secondary Container 
-          - Movie list X N
-              - Movie cards X M
-
-        */
-      }
     </div>
   );
 };
