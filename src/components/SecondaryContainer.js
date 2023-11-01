@@ -8,7 +8,7 @@ const SecondaryContainer = () => {
   const movieKeys = Object.keys(movies);
   return (
     <div className="">
-      <div className=" -mt-52 ml-10 relative z-20">
+      <div className=" -mt-48 ml-10 relative z-20">
         {movieKeys.map((movieCategory) => (
           <MovieList
             title={camelCaseToWords(movieCategory)}
