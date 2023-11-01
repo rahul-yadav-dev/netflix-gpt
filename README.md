@@ -1,5 +1,7 @@
 # Netflix Gpt
 
+# https://netflix-gpt-16c5b.web.app/
+
 - Created app using create-react-app
 - Configured with tailwind css
 - Header
@@ -20,16 +22,16 @@
 - BugFix: If the user is logged in redirect to browse and if not logged in redirect to login
 - Unsubscribed to the onAuthStateChanged callback
 - Add hard coded values to constants files
-- Register for TMDB APIs 
-- Create a new app 
-- Get data from TMDB Now Playing movies 
+- Register for TMDB APIs
+- Create a new app
+- Get data from TMDB Now Playing movies
 - Custom hook
 - Create movie slice
 - Update store with movie data
 - Planning for main container and secondary container
-- Fetch data for trailer video 
+- Fetch data for trailer video
 - Update the store with trailer video data
-- Embedded the youtube video 
+- Embedded the youtube video
 - Make it auto play and mute
 - Added tailwind classes to make main container look awesome
 - Build secondary component
@@ -42,8 +44,7 @@
 - Gpt search page
 - Gpt search bar
 - (FEATURE) Multi language feature in our App
-- Integreate the GPT API(get open ai key) 
-
+- Integreate the GPT API(get open ai key)
 
 # Features
 

@@ -64,13 +64,10 @@ const Header = () => {
             <select
               className="bg-gray-900 text-white rounded-lg mr-3 p-4"
               onChange={handleOnSelect}
+              defaultValue={language}
             >
               {SUPPORTED_LANGUAGES.map((lang) => (
-                <option
-                  key={lang.identifier}
-                  value={lang.identifier}
-                  selected={lang.identifier === language}
-                >
+                <option key={lang.identifier} value={lang.identifier}>
                   {lang.name}
                 </option>
               ))}
