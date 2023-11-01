@@ -13,5 +13,5 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NETFLIX_GPT_44914 }}'
-          projectId: netflix-gpt-44914
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NETFLIX_GPT_16C5B }}'
+          projectId: netflix-gpt-16c5b

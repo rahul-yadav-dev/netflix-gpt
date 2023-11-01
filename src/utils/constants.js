@@ -4,8 +4,7 @@ export const LOGO =
 export const USER_AVATAR =
   "https://mir-s3-cdn-cf.behance.net/projects/404/b06b12176671809.Y3JvcCw5OTksNzgyLDAsMTA4.jpg";
 
-const url =
-  "https://api.themoviedb.org/3/account/20633310/watchlist/movies?language=en-US&page=1&sort_by=created_at.asc";
+  
   export const API_OPTIONS = {
   method: "GET",
   headers: {
