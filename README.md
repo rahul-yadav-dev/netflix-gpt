@@ -45,6 +45,7 @@
 - Gpt search bar
 - (FEATURE) Multi language feature in our App
 - Integreate the GPT API(get open ai key)
+- Show the result of movie search 
 
 # Features
 
