@@ -4,8 +4,7 @@ export const LOGO =
 export const USER_AVATAR =
   "https://mir-s3-cdn-cf.behance.net/projects/404/b06b12176671809.Y3JvcCw5OTksNzgyLDAsMTA4.jpg";
 
-  
-  export const API_OPTIONS = {
+export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
@@ -15,3 +14,12 @@ export const USER_AVATAR =
 };
 
 export const IMAGE_CDN_URL = "https://image.tmdb.org/t/p/w780/";
+
+export const BG_URL =
+  "https://assets.nflxext.com/ffe/siteui/vlv3/a73c4363-1dcd-4719-b3b1-3725418fd91d/fe1147dd-78be-44aa-a0e5-2d2994305a13/IN-en-20231016-popsignuptwoweeks-perspective_alpha_website_large.jpg";
+
+export const SUPPORTED_LANGUAGES = [
+  { identifier: "en", name: "English" },
+  { identifier: "hindi", name: "हिंदी" },
+  { identifier: "spanish", name: "español" },
+];

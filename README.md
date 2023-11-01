@@ -39,7 +39,10 @@
 - Made the browse page look good with tailwind css
 - Fetch movies by category
 
-- Gpt search feature
+- Gpt search page
+- Gpt search bar
+- (FEATURE) Multi language feature in our App
+- Integreate the GPT API(get open ai key) 
 
 
 # Features
